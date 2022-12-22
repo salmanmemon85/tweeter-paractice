@@ -71,4 +71,21 @@ module ApplicationHelper
       "px-5 py-2 text-base #{base} #{theme}"
     end
   end
+  def profile_image(user, options={})
+    size = case options[:size]
+      when "large"
+        "w-20"
+      when "small"
+        "w-20"
+      else
+        "w-20"
+      end
+      classes = "#{size} flex"
+      if user.profile_image.attached?
+        image_tag user.profile_image, class: classes
+        else 
+          image_tag "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.adobe.com%2Fexpress%2Ffeature%2Fimage%2Fpng&psig=AOvVaw185wehfC1wpnUZqZqQXGBw&ust=1671828862122000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJCIq_yNjvwCFQAAAAAdAAAAABAE",
+          class: classes
+      end
+  end
 end

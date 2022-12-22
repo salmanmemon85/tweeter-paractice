@@ -1,15 +1,13 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :profiles
     authenticate :user, lambda { |u| u.admin? } do
       mount Sidekiq::Web => '/sidekiq'
     end
 
-
+resources :tweets, except: [:edit, :update]
   devise_for :users
-  root to: 'home#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'tweets#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

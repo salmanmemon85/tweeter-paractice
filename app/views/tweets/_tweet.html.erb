@@ -1,0 +1,3 @@
+<%= profile_image(tweet.user)%>
+<%= link_to tweet.user.name, profile_path(tweet.user), data:{turbo: false} %>
+<%= tweet.body %><br>
