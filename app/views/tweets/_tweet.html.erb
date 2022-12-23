@@ -2,6 +2,7 @@
   <%= profile_image(tweet.user)%><br />
   <%= link_to tweet.user.name, profile_path(tweet.user), data:{turbo: false}
   %><br />
+  <%= link_to tweet, data:{turbo: false} do %><br />
   <%= tweet.body %><br />
-  <%= render "tweets/controls", tweet: tweet %>
+  <% end %> <%= render "tweets/controls", tweet: tweet %>
 </div>
