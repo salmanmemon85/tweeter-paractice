@@ -1,5 +1,9 @@
-<%= render 'form' %>
-
-<%= turbo_frame_tag "tweets" do %>
-<%= render @tweets %>
-<% end %>
+<%= render 'form' %><br />
+<div id="empty">
+  <%= turbo_frame_tag Tweet.new do %> <% if Tweet.all.none? %><br />
+  <%= render "empty" %> <% end %> <% end %> <br />
+  <%= turbo_frame_tag "tweets" do %> <% @tweets.each do |tweet| %><br />
+  <%= render partial: "tweets/#{tweet.tweet_type.parameterize}", locals: {tweet:
+  tweet} %><br />
+  <% end %> <% end %>
+</div>

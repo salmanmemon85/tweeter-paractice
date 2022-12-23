@@ -1,5 +1,3 @@
-<%=  profile_image(@profile, size: "large") %>
-<%= @profile.name%>
-<%= @profile.username%>
-<%= link_to 'Edit Profile', edit_user_registration_path %>
+<%= profile_image(@profile, size: "large") %> <%= @profile.name%> <%=
+@profile.username%> <%= link_to 'Edit Profile', edit_user_registration_path %>
 <%= render collection: @profile.tweets, partial: 'tweets/tweet' %>

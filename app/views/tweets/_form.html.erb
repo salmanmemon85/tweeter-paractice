@@ -1,10 +1,6 @@
-<%= form_with model: @tweet, data: {controller: "reset-form", action: "turbo:submit-end->reset-form#reset"} do |f| %>
-<% if flash[:tweet_errors] %>
-  <%= pluralize(f.object.errors.count, "error")%>probhited this tweet from being saved
-<% flash[:tweet_errors].each do |error| %>
-  <%= error%>
-<% end %>
-<% end %>
-<%= f.text_area :body,  placeholder: "Whats on your mind"%>
-<%= f.submit %>
-<% end %>
+<%= form_with model: @tweet, data: {controller: "reset-form", action:
+"turbo:submit-end->reset-form#reset"} do |f| %> <% if flash[:tweet_errors] %>
+<%= pluralize(f.object.errors.count, "error")%>probhited this tweet from being
+saved <% flash[:tweet_errors].each do |error| %> <%= error %> <% end %> <% end
+%> <%= f.text_area :body, placeholder: "Whats on your mind"%> <%= f.submit %> <%
+end %>
