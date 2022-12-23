@@ -1,12 +1,12 @@
-<div class="px-6 py-3 border-b" id="<%= dom_id(tweet) %>">
+<div class="px-6 py-3 border-b" id="<%= dom_id(tweet.tweet) %>">
   <div class="flex items-center mb-3 space-x-2">
     <p class="text-sm font-medium">
-      Retweeted by <%= "@" + tweet.user.username %>
+      Retweeted by <%= tweet.user.name %>
     </p>
   </div>
   <div class="">
       <%= link_to tweet, data: { turbo: false } do %>
-      <div class=""><%= tweet.body %></div>
+      <div class=""><%= tweet.tweet.body %></div>
       <% end %> <%= render "tweets/controls", tweet: tweet.tweet %>
     </div>
   </div>
