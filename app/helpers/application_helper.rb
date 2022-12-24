@@ -84,7 +84,7 @@ module ApplicationHelper
       if user.profile_image.attached?
         image_tag user.profile_image, class: classes
         else 
-          image_tag "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.adobe.com%2Fexpress%2Ffeature%2Fimage%2Fpng&psig=AOvVaw185wehfC1wpnUZqZqQXGBw&ust=1671828862122000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJCIq_yNjvwCFQAAAAAdAAAAABAE",
+          image_tag "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fprofile&psig=AOvVaw2SGqqDafWlOouItpQmp_0M&ust=1671911097309000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNit36jAkPwCFQAAAAAdAAAAABAE",
           class: classes
       end
   end

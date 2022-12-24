@@ -7,11 +7,12 @@ Rails.application.routes.draw do
     end
 
 resources :tweets, except: [:edit, :update] do
-  resources :comments, except: [:create, :destroy]
+  resources :comments, only: [:create, :destroy]
   member do
     post :retweet
   end
 end
+resources :likes, only: :create
   devise_for :users
   root to: 'tweets#index'
 

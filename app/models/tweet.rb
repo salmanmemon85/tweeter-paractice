@@ -1,4 +1,5 @@
 class Tweet < ApplicationRecord
+  include Likeable
   belongs_to :user
   belongs_to :tweet, optional: true
   validates :body, length: {maximum: 240}, allow_blank: false, unless: :tweet_id

@@ -253,6 +253,7 @@ DEPENDENCIES
   name_of_person
   puma (~> 5.0)
   rails (~> 7.0.4)
+  redis (~> 4.0)
   selenium-webdriver
   sidekiq (~> 6.5, >= 6.5.4)
   sprockets-rails
